@@ -1,0 +1,96 @@
+// One
+.heroBannerOne {
+  overflow: hidden;
+
+  video {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    left: 0;
+    top: 50%;
+    z-index: -1;
+    transform: translateY(-50%);
+  }
+
+  .controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    button {
+      color: clr(black, main);
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      font-size: 2em;
+
+      &:after {
+        content: "";
+        font-family: "lineicons";
+      }
+
+      &[data-state="play"] {
+        &::after {
+          content: "\ea9f";
+        }
+      }
+
+      &[data-state="pause"] {
+        &::after {
+          content: "\ea9e";
+        }
+      }
+
+      &[data-state="mute"] {
+        &::after {
+          content: "\ea9a";
+        }
+      }
+
+      &[data-state="unmute"] {
+        &::after {
+          content: "\ea97";
+        }
+      }
+    }
+  }
+
+  .overlay {
+    padding: 200px 0;
+
+    @include md {
+      padding: 60px 0 130px;
+    }
+
+    .sectionTitle {
+      color: clr(light, outline);
+      max-width: 1100px;
+      margin: auto;
+
+      h1 {
+        color: inherit;
+        text-shadow: 0 2px 4px rgba(clr(black, main), 0.5);
+      }
+
+      .divider {
+        margin: 15px auto;
+
+        &:before,
+        &:after {
+          background-color: clr(black, main);
+        }
+      }
+
+      p {
+        font-size: 24px;
+
+        @include md {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

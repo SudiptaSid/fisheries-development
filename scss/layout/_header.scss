@@ -1,0 +1,303 @@
+// Header
+.mainHeader {
+  background-color: clr(light, outline);
+  position: relative;
+
+  // Searchbar
+  .searchBar {
+    background: linear-gradient(
+      90deg,
+      clr(primary, main) 0%,
+      clr(secondary, main) 100%
+    );
+    padding: 10px 0;
+
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      color: clr(light, outline);
+
+      a {
+        color: inherit;
+        display: inline;
+
+        &.call {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+
+          span {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+
+            &:first-child {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Topbar
+  .topHeader {
+    padding: 10px 0;
+
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+
+      .logoSec {
+        @include logo;
+      }
+
+      .logoText {
+        text-align: center;
+
+        h4 {
+          text-transform: uppercase;
+          margin-bottom: 0;
+          color: clr(primary, main);
+          background: -webkit-linear-gradient(
+            45deg,
+            clr(primary, main),
+            clr(secondary, main)
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+
+          @include md {
+            font-size: 14px;
+          }
+        }
+
+        h6 {
+          margin: 4px 0;
+
+          @include md {
+            font-size: 10px;
+          }
+        }
+
+        .small {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+
+          @include md {
+            font-size: 9px;
+            gap: 0;
+          }
+
+          span {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  // Menubar
+  .navbar {
+    background-color: clr(light, outline);
+    border-top: 1px solid clr(light, main);
+    border-bottom: 1px solid clr(light, main);
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    padding: 10px 0;
+
+    .actioinSec {
+      display: flex;
+      gap: 10px;
+
+      .logoText {
+        color: clr(primary, main);
+        font-size: 0.9em;
+        font-weight: 600;
+        text-transform: uppercase;
+        display: none;
+
+        @include md {
+          display: inline;
+        }
+      }
+
+      .navbar-toggler {
+        @include iconBox;
+        padding: 4px;
+        border-color: clr(light, main);
+        display: none;
+
+        @include md {
+          display: inline-flex;
+        }
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
+
+    .navbar-nav {
+      justify-content: center;
+      gap: 15px;
+      width: 100%;
+
+      .nav-item {
+        .nav-link {
+          padding: 1em;
+          font-size: 16px;
+          font-weight: 400;
+          text-transform: capitalize;
+
+          &:hover,
+          &.active {
+            color: clr(primary, main);
+          }
+        }
+      }
+    }
+
+    &.sticky {
+      position: fixed;
+      animation-name: stickyTransition;
+      animation-duration: 0.5s;
+      animation-fill-mode: both;
+      box-shadow: 0 0 16px rgba(clr(black, main), 0.4);
+    }
+  }
+}
+
+// Search Form One
+#searchFormOne {
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+
+  .form-group {
+    display: flex;
+    align-items: center;
+    background-color: clr(light, outline);
+    padding: 4px;
+    border-radius: 40px;
+
+    .iconBox {
+      width: 100%;
+
+      .form-control {
+        padding: 15px;
+        border: none;
+        background-color: transparent;
+
+        &:focus {
+          box-shadow: none !important;
+        }
+      }
+    }
+
+    button {
+      @include iconBox;
+      width: 54px;
+      height: 54px;
+      color: clr(light, outline);
+      background-color: clr(primary, main);
+      border-radius: 50%;
+      font-size: 1.4em;
+    }
+  }
+
+  .mfp-close {
+    display: none;
+  }
+}
+
+// Responsive Navbar
+.mobileSidebar {
+  .offcanvas-header {
+    padding: 15px;
+    border-bottom: 1px solid clr(light, main);
+    gap: 5px;
+    align-items: center;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 0.9em;
+      font-weight: 600;
+      text-transform: uppercase;
+
+      img {
+        height: 60px;
+      }
+    }
+
+    .closeBtn {
+      @include iconBox;
+      padding: 4px;
+      border-color: clr(light, main);
+      background-color: transparent;
+    }
+  }
+
+  .offcanvas-body {
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .accordion-item {
+        .accordion-button {
+          padding: 0;
+          color: clr(black, main);
+
+          &:hover,
+          &:focus,
+          &.active {
+            color: clr(primary, main);
+          }
+        }
+
+        ul {
+          @include list;
+
+          li {
+            a {
+              font-weight: 500;
+              color: clr(black, main);
+              text-transform: capitalize;
+
+              &:hover,
+              &:active,
+              &.active {
+                color: clr(primary, main);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .offcanvasBtn {
+      padding: 24px 0;
+      border-top: 1px solid clr(light, main);
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}

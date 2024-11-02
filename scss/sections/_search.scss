@@ -1,0 +1,113 @@
+// Search One
+.searchOne {
+  position: relative;
+  margin-top: -100px;
+
+  form {
+    padding: 2em;
+    background: linear-gradient(
+      90deg,
+      clr(primary, main) 0%,
+      clr(secondary, main) 100%
+    );
+    border-radius: 4px;
+
+    .form-group {
+      > label {
+        color: clr(light, outline);
+      }
+    }
+
+    .selectDate {
+      display: flex;
+      align-items: start;
+      gap: 15px;
+    }
+
+    .personSelect {
+      .accordion {
+        position: relative;
+
+        .accordion-item {
+          .accordion-button {
+            background-color: clr(light, outline);
+            border: 1px solid clr(light, main);
+            border-radius: 4px;
+            padding: 10px 15px;
+            color: clr(black, main);
+            font-weight: 400;
+
+            &:hover {
+              color: clr(black, main);
+            }
+
+            &:focus {
+              border-color: clr(primary, focus);
+              box-shadow: 0 0 0 3px rgba(clr(primary, outline), 0.5) !important;
+            }
+          }
+
+          .accordion-collapse {
+            position: absolute;
+            width: 100%;
+            padding: 15px;
+            background-color: clr(light, outline);
+            border: 1px solid clr(light, main);
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(clr(black, main), 0.1);
+
+            .totalPerson {
+              display: flex;
+              align-items: start;
+              gap: 15px;
+
+              .personQuantity {
+                width: 50%;
+
+                span {
+                  display: block;
+                  font-weight: 600;
+                  margin-bottom: 5px;
+
+                  small {
+                    font-weight: 400;
+                  }
+                }
+
+                .quantityBox {
+                  display: flex;
+
+                  button {
+                    display: inline-block;
+                    width: 25%;
+                    color: clr(black, main);
+                    background-color: clr(light, focus);
+                    border: 1px solid clr(light, main);
+                    text-align: center;
+                    padding: 5px;
+                    font-weight: bold;
+                    line-height: 1;
+                    cursor: pointer;
+                  }
+
+                  input[type="number"] {
+                    display: inline-block;
+                    width: 50%;
+                    text-align: center;
+                    border: 1px solid clr(light, main);
+                    border-left: 0;
+                    border-right: 0;
+
+                    &::-webkit-inner-spin-button {
+                      -webkit-appearance: none;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

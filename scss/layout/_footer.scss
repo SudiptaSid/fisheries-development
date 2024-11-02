@@ -1,0 +1,94 @@
+// Footer
+.mainFooter {
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-color: clr(primary, hover);
+
+  h5 {
+    font-size: 16px;
+  }
+
+  .footerTop {
+    padding: 100px 0 50px;
+
+    @include lg {
+      padding: 60px 0 20px;
+    }
+
+    .titleFooter {
+      margin-bottom: 24px;
+
+      h5 {
+        color: clr(light, outline);
+        display: inline-block;
+        text-transform: capitalize;
+        font-style: italic;
+        margin-bottom: 0;
+        padding-bottom: 5px;
+        border-bottom: 1px solid clr(light, outline);
+      }
+    }
+
+    .contactFooter {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .contactItem {
+        padding-left: 10px;
+        border-left: 2px solid clr(light, outline);
+
+        h6 {
+          margin-bottom: 6px;
+          font-size: 0.8em;
+          font-weight: 500;
+          color: clr(light, outline);
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+
+        h5 {
+          font-weight: 600;
+          color: clr(light, outline);
+          margin-bottom: 0;
+
+          a {
+            display: block;
+            color: clr(light, main);
+
+            &:hover {
+              color: clr(black, main);
+            }
+          }
+        }
+
+        .socialLink {
+          @include social;
+        }
+      }
+    }
+
+    .linkFooter {
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        a {
+          color: clr(light, main);
+
+          &:hover {
+            color: clr(black, main);
+          }
+        }
+      }
+    }
+  }
+
+  .copyright {
+    padding: 24px 0;
+    text-align: center;
+    border-top: 1px solid clr(black, outline);
+    color: clr(light, outline);
+  }
+}

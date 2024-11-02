@@ -1,0 +1,49 @@
+// Explore One
+.exploreOne {
+  padding: 40px 0;
+
+  .exploreSlider {
+    .slick-arrow {
+      @include slickArrowOne;
+    }
+  }
+}
+
+// Top Destinations One
+.destinationsOne {
+  padding: 40px 0;
+
+  .sectionTitle {
+    .divider {
+      margin: 15px auto;
+    }
+  }
+
+  .itemList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    height: 100%;
+  }
+}
+
+// Festivals One
+.festivalsOne {
+  .sectionTitle {
+    .divider {
+      margin: 15px auto;
+    }
+  }
+}
+
+// Gallery One
+.galleryOne {
+  padding: 40px 0;
+
+  .sectionTitle {
+    .divider {
+      margin: 15px auto;
+    }
+  }
+}

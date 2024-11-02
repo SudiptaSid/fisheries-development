@@ -1,0 +1,22 @@
+// One
+.aboutOne {
+  .bgBox {
+    padding: 50px;
+    background: linear-gradient(
+      90deg,
+      clr(primary, outline) 0%,
+      clr(secondary, outline) 100%
+    );
+    border-radius: 15px;
+
+    @include md {
+      padding: 32px 15px;
+    }
+  }
+
+  .imgSec {
+    img {
+      width: 100%;
+    }
+  }
+}
